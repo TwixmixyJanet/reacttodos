@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     console.log("Component mounted. Fetching todos from local storage...");
     const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-    if (storedTodos) {
+    if (storedTodos && storedTodos.length > 0) {
       console.log("Found todos in local storage:", storedTodos);
       setTodos(storedTodos);
     } else {
